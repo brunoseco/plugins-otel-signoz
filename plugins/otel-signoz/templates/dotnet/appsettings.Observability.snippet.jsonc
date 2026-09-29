@@ -1,0 +1,25 @@
+// Merge into the service's appsettings files. NO IngestionKey here — it comes from user-secrets (local)
+// or Key Vault / the Observability__IngestionKey environment variable (deploy).
+//
+// appsettings.json (shared across every environment)
+{
+  "Observability": {
+    "Endpoint": "https://ingest.__REGION__.signoz.cloud:443",
+    "ServiceName": "__SERVICE_NAME__",
+    "ServiceNamespace": "__SERVICE_NAMESPACE__",
+    "SamplingRatio": 1.0
+  }
+}
+
+// appsettings.Development.json
+{ "Observability": { "Environment": "development" } }
+
+// appsettings.Homolog.json (or whatever name the project uses for its staging/homolog environment)
+{ "Observability": { "Environment": "homolog" } }
+
+// appsettings.Production.json
+{ "Observability": { "Environment": "production" } }
+
+// Local (once per machine, inside the project's folder):
+//   dotnet user-secrets init
+//   dotnet user-secrets set "Observability:IngestionKey" "<this project's dev SigNoz ingestion key>"

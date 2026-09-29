@@ -1,0 +1,20 @@
+{
+  "name": "otel-signoz",
+  "displayName": "OTel + SigNoz Observability",
+  "version": "1.0.0",
+  "description": "Discovers runnable backend and frontend services in any language or framework, interviews the team to name and map them, instruments OpenTelemetry -> SigNoz traces/logs/metrics with a stable service.name and an explicit deployment.environment, and closes the Trace ID loop from backend errors to the frontend error screen. Ships a deeply validated .NET + Angular reference implementation; other stacks follow the same principles.",
+  "author": {
+    "name": "Bruno Seco"
+  },
+  "repository": "https://github.com/brunoseco/plugins-otel-signoz",
+  "keywords": [
+    "opentelemetry",
+    "signoz",
+    "observability",
+    "dotnet",
+    "angular",
+    "tracing",
+    "distributed-tracing",
+    "polyglot"
+  ]
+}

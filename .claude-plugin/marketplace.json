@@ -1,0 +1,17 @@
+{
+  "name": "brunoseco",
+  "owner": {
+    "name": "Bruno Seco"
+  },
+  "metadata": {
+    "description": "Bruno Seco's personal marketplace of Claude Code plugins.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "otel-signoz",
+      "source": "./plugins/otel-signoz",
+      "description": "Discovers backend services (APIs, an Auth server, workers/queues/background jobs) and frontends in any language or framework, instruments OpenTelemetry -> SigNoz traces/logs/metrics, and closes the Trace ID loop from backend errors to the frontend error screen. Ships a deeply validated .NET + Angular reference implementation."
+    }
+  ]
+}
