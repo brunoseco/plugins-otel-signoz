@@ -5,6 +5,49 @@ in a backend + frontend codebase, in whatever language or framework it's written
 validated .NET + Angular reference implementation; other stacks follow the same principles (see
 [`references/other-stacks.md`](references/other-stacks.md)).
 
+## Quick start
+
+1. **Install the plugin** once — see the [repository root README](../../README.md#install) if you
+   haven't already (you'll need read access to this private repo first).
+
+2. **Open the repository you want to instrument** and start Claude Code there:
+
+   ```bash
+   cd path/to/your-project
+   claude
+   ```
+
+3. **Not sure yet whether it needs work, or just want a report first?** Run:
+
+   ```text
+   /otel-signoz:review
+   ```
+
+   This only reads the repository — it never changes anything — and prints a findings report
+   (severity, evidence, fix, effort) you can act on later.
+
+4. **Ready to roll it out?** Run:
+
+   ```text
+   /otel-signoz:setup
+   ```
+
+   It walks through 8 phases, three of which **stop and wait for you**: after showing you the
+   discovered services (confirm or correct), after a short interview (service names come with a
+   suggestion already filled in — just confirm or type another), and after presenting the exact
+   file-by-file plan — nothing gets created or edited until you approve that plan. It finishes with
+   small commits (one per service) and a draft pull request description; it never pushes or opens the
+   PR on its own.
+
+5. **Investigating a bug later?** Point it at a Trace ID or just describe the symptom:
+
+   ```text
+   /otel-signoz:investigate <trace-id-or-description>
+   ```
+
+   The first time, it'll walk you through connecting Claude Code to your SigNoz account (a one-time
+   `claude mcp add` command) — see [`skills/investigate/SKILL.md`](skills/investigate/SKILL.md).
+
 ## What it does
 
 1. **Discovers** the runnable services in the current repository — APIs, an Auth server, workers /

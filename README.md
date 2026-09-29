@@ -22,12 +22,21 @@ See [`plugins/otel-signoz/README.md`](plugins/otel-signoz/README.md) for the ful
 
 ## Install
 
-This repository is **private** — anyone installing the plugin needs read access to it first.
+This repository is **private** — before anything below works, ask **Bruno Seco** to add you as a
+collaborator on `brunoseco/plugins-otel-signoz` (Settings → Collaborators, on GitHub). You'll also
+need [Claude Code](https://claude.com/claude-code) itself installed and signed in with the GitHub
+account you were added with.
 
-```
+Then, inside any Claude Code session:
+
+```text
 /plugin marketplace add brunoseco/plugins-otel-signoz
 /plugin install otel-signoz@brunoseco
 ```
+
+That's it — the three skills below are now available in every project. See
+[`plugins/otel-signoz/README.md`](plugins/otel-signoz/README.md#quick-start) for a walkthrough of
+actually running one against a real repository.
 
 ## Skills
 
